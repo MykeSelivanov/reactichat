@@ -4,15 +4,21 @@ import './index.css';
 import App from './App';
 import store from "./store";
 import reportWebVitals from './reportWebVitals';
-import registerServiceWorker from "./registerServiceWorker";
+// import registerServiceWorker from "./registerServiceWorker";
+
+function fancyLog() {
+  console.log("%c Rendered with 👉 👉 👇", "background: blue; color: #FFF");
+  console.log(store.getState());
+}
 
 const render = () => {
-  ReactDOM.render(
+  fancyLog();
+
+  return ReactDOM.render(
     <App />,
     document.getElementById('root')
   );
 };
-registerServiceWorker();
 
 render();
 store.subscribe(render);
