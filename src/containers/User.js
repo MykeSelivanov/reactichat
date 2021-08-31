@@ -1,4 +1,5 @@
 import React from 'react'
+import "./User.css";
 
 export default function User({ user }) {
     const { name, profile_pic, status } = user;

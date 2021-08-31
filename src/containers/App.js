@@ -1,7 +1,7 @@
 import './App.css';
-import Sidebar from './Sidebar.js';
-import Main from './Main.js';
-import store from './store';
+import Sidebar from '../components/Sidebar';
+import Main from '../components/Main.js';
+import store from '../store';
 import _ from 'lodash';
 
 function App() {
