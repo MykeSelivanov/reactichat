@@ -1,6 +1,8 @@
 # Reactichat
 Chat application based on React / Redux with static random data
 
+![chat-app](https://github.com/MykeSelivanov/reactichat/blob/main/public/rdm_scrnsht.png)
+
 ## Technologies
 - JS
 - React
