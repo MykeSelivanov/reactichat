@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ChatWindow() {
+export default function ChatWindow({ activeUserId }) {
     return (
-        <div>
-            
+        <div className="ChatWindow">Conversation for user id:
+            {activeUserId}
         </div>
     )
 }
