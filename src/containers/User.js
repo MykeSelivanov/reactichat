@@ -1,7 +1,7 @@
 import React from 'react'
 import store from '../store';
 import "./User.css";
-import { setActiveUserId } from '../actions';
+import { deleteContact, setActiveUserId } from '../actions';
 
 export default function User({ user }) {
     const { name, profile_pic, status } = user;
@@ -23,5 +23,6 @@ function handleUserClick({ user_id }) {
 
 function handleCrossClick(e, user_id) {
     e.stopPropagation();
-
+    store.dispatch(setActiveUserId(null));
+    store.dispatch(deleteContact(user_id));
 }
