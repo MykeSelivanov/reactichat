@@ -18,6 +18,11 @@
     display: none;
 }
 
+.delete-user-button {
+  margin-right: 0;
+  position: end;
+}
+
 /* not small devices  */
 @media (min-width: 576px) {
     .User__details {
