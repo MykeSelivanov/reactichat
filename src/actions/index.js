@@ -1,4 +1,8 @@
-import { SET_ACTIVE_USER_ID, DELETE_CONTACT } from "./constants/action-types";
+import { 
+    SET_ACTIVE_USER_ID, 
+    DELETE_CONTACT,
+    SET_TYPING_VALUE
+ } from "./constants/action-types";
 
 export const setActiveUserId = id => ({
     type: SET_ACTIVE_USER_ID,
@@ -9,4 +13,10 @@ export const setActiveUserId = id => ({
 export const deleteContact = (user_id) => ({
     type: DELETE_CONTACT,
     payload: user_id
-})
+});
+
+// set typing value, when user types a message
+export const setTypingValue = value => ({
+    type: SET_TYPING_VALUE,
+    payload: value
+});
