@@ -2,6 +2,7 @@
     display: flex;
     align-items: flex-start;
     padding: 1rem;
+    position: relative;
 }
   
 .User:hover {
@@ -18,9 +19,10 @@
     display: none;
 }
 
-.delete-user-button {
-  margin-right: 0;
-  position: end;
+.User__closeIcon {
+    position: absolute;
+    top: 2px;
+    right: 5px;
 }
 
 /* not small devices  */
