@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
+import { deleteChat, editChat } from '../actions';
+import store from '../store';
 import './Chat.css';
 
 const Chat = ({ message }) => {
-    const { text, is_user_msg } = message;
-    return (
-        <span className={`Chat ${is_user_msg ? 'is-user-msg' : ''}`}
-        >{text}</span>
+    const { number, text, is_user_msg } = message;
+    return is_user_msg ? (
+        <div
+            className="Chat is-user-msg"
+            onDoubleClick={handleEditChat.bind(null, number, text)}>
+            <span
+                className="Chat__close"
+                onClick={handleDeleteChat.bind(null, number)}>
+                x
+            </span>
+            {text}
+        </div>
+    ) : (
+        <span className="Chat">{text}</span>
     );
 };
 
@@ -24,8 +36,8 @@ class Chats extends Component {
     }
 
     scrollToBottom = () => {
-        this.chatsRef.current.scrollTop = 
-        this.chatsRef.current.scrollHeight;
+        this.chatsRef.current.scrollTop =
+            this.chatsRef.current.scrollHeight;
     }
 
     render() {
