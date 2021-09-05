@@ -1,8 +1,11 @@
+import activeUserId from "../reducers/activeUserID";
 import { 
     SET_ACTIVE_USER_ID, 
     DELETE_CONTACT,
     SET_TYPING_VALUE,
-    SEND_MESSAGE
+    SEND_MESSAGE,
+    DELETE_CHAT,
+    EDIT_CHAT
  } from "./constants/action-types";
 
 export const setActiveUserId = id => ({
@@ -28,5 +31,24 @@ export const sendMessage = (message, userId) => ({
     payload: {
         message,
         userId
+    }
+});
+
+// delete chat
+export const deleteChat = (number, activeUserId) => ({
+    type: DELETE_CHAT,
+    payload: {
+        number, 
+        activeUserId
+    }
+});
+
+// edit chat
+export const editChat = (number, activeUserId, text) => ({
+    type: EDIT_CHAT,
+    payload: {
+        number, 
+        activeUserId,
+        text
     }
 });
