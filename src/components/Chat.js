@@ -18,10 +18,12 @@ const Chat = ({ message }) => {
     return is_user_msg ? (
         <div
             className="Chat is-user-msg"
-            onDoubleClick={handleEditChat.bind(null, number, text)}>
+            onDoubleClick={handleEditChat.bind(null, number, text)}
+        >
             <span
                 className="Chat__close"
-                onClick={handleDeleteChat.bind(null, number)}>
+                onClick={handleDeleteChat.bind(null, number)}
+            >
                 x
             </span>
             {text}

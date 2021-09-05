@@ -1,4 +1,4 @@
-import activeUserId from "../reducers/activeUserID";
+import activeUserId from "../reducers/activeUserId";
 import { 
     SET_ACTIVE_USER_ID, 
     DELETE_CONTACT,

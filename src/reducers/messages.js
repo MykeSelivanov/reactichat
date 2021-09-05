@@ -1,5 +1,5 @@
 import { getMessages } from "../data/static-data";
-import { SEND_MESSAGE } from "../actions/constants/action-types";
+import { SEND_MESSAGE, DELETE_CHAT } from "../actions/constants/action-types";
 import _ from "lodash";
 
 export default function messages(state = getMessages(10), action) {
@@ -19,6 +19,15 @@ export default function messages(state = getMessages(10), action) {
                     }
                 }
             }
+
+        case DELETE_CHAT:
+            const messageId = action.payload.number;
+            const activeUserId = action.payload.activeUserId;
+            return {
+                ...state,
+                [activeUserId]: _.omit(state[activeUserId], messageId)
+            };
+
         default:
             return state;
     }
