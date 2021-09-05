@@ -3,6 +3,16 @@ import { deleteChat, editChat } from '../actions';
 import store from '../store';
 import './Chat.css';
 
+const handleDeleteChat = number => {
+    const activeUserId = store.getState().activeUserId;
+    store.dispatch(deleteChat(number, activeUserId));
+}
+
+const handleEditChat = (number, text, e) => {
+    const activeUserId = store.getState().activeUserId;
+    store.dispatch(editChat(number, activeUserId, text));
+}
+
 const Chat = ({ message }) => {
     const { number, text, is_user_msg } = message;
     return is_user_msg ? (
